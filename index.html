@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Canvas签名Demo</title>
+    <style>
+    	.canvasDiv{
+		    height: 300px;
+		    width:100%;
+		    border: 1px solid black;
+		}
+		#canvasEdit{
+			width:100%;
+			height:300px;
+		}
+		.imgDiv{
+		    height: 200px;
+		    width: 300px;
+		    border: 1px solid black;
+		    margin-top: 15px;
+		}
+		.btnDiv{
+		    height: 100px;
+		    width: 400px;
+		    margin-top: 15px;
+		}
+		.clearBtn{
+		    font-size: 22pt;
+		    background:#e57727;
+		    border: 0;
+		    margin-left: 25%;
+		}
+		.okBtn{
+		    font-size: 22pt;
+		    background: #36a5d9;
+		    border: 0;
+		    margin-left: 15%;
+		}
+    </style>
+</head>
+<body>
+
+    <div class="canvasDiv">
+        <div id="editing_area">
+            <canvas  id="canvasEdit"></canvas>
+        </div>
+    </div>
+
+    <div class="imgDiv">
+        <span id="sign_show"></span>
+    </div>
+
+    <div class="btnDiv">
+        <a id="sign_clear" class="clearBtn">清除</a>
+        <a id="sign_ok" class="okBtn">确认</a>
+    </div>
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="esign.js"></script>
+<script type="text/javascript">
+$(function(){
+	//初始化动作，根据DOM的ID不同进行自定义，如果不写则内部默认取这四个
+	$().esign("canvasEdit", "sign_show", "sign_clear", "sign_ok");
+});
+</script>
+
+</body>
+</html>
